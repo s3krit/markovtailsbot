@@ -5,7 +5,7 @@ cock = Cocktails.new
 
 bot = Cinch::Bot.new do
   configure do |c|
-    c.nick = 'va11halla'
+    c.nick = 'va11halla_'
     c.server = 'irc.rizon.net'
     c.port = '6697'
     c.ssl.use = true
@@ -17,6 +17,10 @@ bot = Cinch::Bot.new do
     m.reply cocktail[0]
     m.reply cocktail[1]
     m.reply cocktail[2]
+  end
+
+  on :message, '.bots' do |m|
+    m.reply 'Reporting in! [Ruby] Type @cocktail | github.com/s3krit/markovtailsbot'
   end
 end
 
