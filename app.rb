@@ -19,8 +19,15 @@ bot = Cinch::Bot.new do
     m.reply cocktail[2]
   end
 
+  on :message, /[^\w]stab( |bing|bed|s |$)/ do |m|
+    puts m.message
+    text = m.message.gsub('stab', 'dab')
+    m.reply text
+  end
+
   on :message, '.bots' do |m|
-    m.reply 'Reporting in! [Ruby] Type @cocktail | github.com/s3krit/markovtailsbot'
+    m.reply
+    'Reporting in! [Ruby] Type @cocktail | github.com/s3krit/markovtailsbot'
   end
 end
 
